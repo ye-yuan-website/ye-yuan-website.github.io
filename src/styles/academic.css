@@ -27,9 +27,9 @@ body {
 }
 
 .academic-site {
-  width: min(780px, calc(100% - 48px));
-  margin-inline: auto;
-  padding: 82px 0 40px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 72px 32px 56px;
 }
 
 .academic-site a {
@@ -64,8 +64,27 @@ body {
   vertical-align: 0.08em;
 }
 .role { margin: 10px 0 9px; color: var(--muted); font-size: 1rem; }
-.profile-links { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 11px; font-size: 0.95rem; }
-.profile-links span { color: #a7adb6; }
+.profile-links {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.link-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: center;
+}
+
+.link-line span {
+  margin: 0 10px;
+  color: var(--muted);
+}
+/* .profile-links span { color: #a7adb6; } */
 
 main { margin-top: 37px; }
 .academic-site p { margin: 0 0 14px; }
@@ -110,9 +129,24 @@ main { margin-top: 37px; }
 }
 .paper-links span { color: #a7adb6; }
 .academic-site .abstract { font-size: 0.96rem; margin-bottom: 20px; }
+.abstract-details {
+  font-size: 0.94rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.work-list,
+.bullet-list {
+  list-style-type: disc;
+  padding-left: 1.4rem;
+  margin: 0;
+}
 
-.work-list { list-style: none; margin: 0; padding: 0; }
-.work-list li { padding: 0; margin: 0 0 13px; line-height: 1.58; }
+.work-list li,
+.bullet-list li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.2rem;
+  line-height: 1.6;
+}
 .work-title { color: var(--ink); }
 .work-link { white-space: nowrap; }
 .small-section { margin-top: 36px; }
@@ -129,6 +163,7 @@ main { margin-top: 37px; }
   color: var(--muted);
   font-size: 0.84rem;
 }
+
 .site-footer a { color: var(--muted); text-decoration-color: var(--rule); }
 .site-footer a:hover { color: var(--blue-text); text-decoration-color: var(--blue); }
 
@@ -144,4 +179,85 @@ main { margin-top: 37px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+
+/* =====================================
+   Profile Header
+   ===================================== */
+
+.profile-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  column-gap: 28px;
+  align-items: start;
+  width: 100%;
+  margin-bottom: 56px;
+}
+
+/* Left: Identity and Links */
+
+.profile-identity {
+  min-width: 0;
+}
+
+.profile-identity h1 {
+  margin-top: 0;
+}
+
+.profile-links {
+  line-height: 1.9;
+}
+
+/* Right: Portrait */
+
+.profile-photo {
+  display: block;
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 4px;
+  justify-self: end;
+}
+
+/* =====================================
+   Mobile Layout
+   ===================================== */
+
+@media (max-width: 560px) {
+  .academic-site {
+    padding: 40px 22px 36px;
+  }
+
+  .profile-header {
+    grid-template-columns: minmax(0, 1fr) 92px;
+    column-gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .profile-photo {
+    width: 92px;
+    height: 112px;
+  }
+
+  .profile-links {
+    gap: 6px;
+    font-size: 0.95rem;
+  }
+}
+
+main p {
+  max-width: 42rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  main p {
+    text-align: left;
+    hyphens: none;
+  }
 }

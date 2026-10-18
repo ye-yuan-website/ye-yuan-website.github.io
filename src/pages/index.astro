@@ -8,35 +8,77 @@ const jmpUrl = 'https://cdn.jsdelivr.net/gh/YYuan4031357/JobMarketPaper/Job%20Ma
 const stigmaUrl = 'https://cdn.jsdelivr.net/gh/YYuan4031357/StigmaProject/Yuan.%20Y%20%282026%29%20-%20Stigma%2C%20Concealment%2C%20and%20Marriage%20Matching.pdf';
 const reviewUrl = 'https://doi.org/10.1093/acrefore/9780190625979.013.986';
 const reviewPdfUrl = 'https://robinsoncortes.github.io/website_files/matching_review.pdf';
+const reviewrepoUrl = 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YWK1MD';
+const COQUrl = 'https://sites.google.com/site/climentquintanadomeque/home?authuser=0';
+const DCUrl = 'https://www.damianclarke.net/';
+const ARCUrl = 'https://www.robinson-cortes.com/';
 ---
 
 <AcademicLayout>
   <div class="academic-site">
-    <header class="profile-header" id="top">
-      <h1>Ye Yuan <span class="chinese-name" lang="zh-Hans">元野</span></h1>
-      <p class="role">Economics Researcher</p>
-      <nav class="profile-links" aria-label="Profile links">
-        <a href="mailto:yy429@exeter.ac.uk">Email</a>
-        <span aria-hidden="true">·</span>
-        <a href={cvUrl} target="_blank" rel="noopener noreferrer">CV</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://github.com/YYuan4031357" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://bsky.app/profile/ye-yuan.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
-      </nav>
-    </header>
+
+<header class="profile-header" id="top">
+
+  <!-- Left: Name and contact information -->
+  <div class="profile-identity">
+
+    <h1>
+      Ye Yuan
+      <span class="chinese-name" lang="zh-Hans">元野</span>
+    </h1>
+
+    <p class="role">Economics Researcher</p>
+
+    <nav class="profile-links" aria-label="Profile links">
+  <div class="link-line">
+    <a href="mailto:ye.yuan@citystgeorges.ac.uk">Email</a>
+    <span aria-hidden="true">·</span>
+    <a href={cvUrl} target="_blank" rel="noopener noreferrer">CV</a>
+    <span aria-hidden="true">·</span>
+    <a href={jmpUrl} target="_blank" rel="noopener noreferrer">Job Market Paper</a>
+  </div>
+
+  <div class="link-line">
+    <a href="https://github.com/YYuan4031357" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://www.linkedin.com/in/ye-yuan-b6b068378" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://x.com/_YeYuan" target="_blank" rel="noopener noreferrer">Twitter</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://bsky.app/profile/ye-yuan.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
+  </div>
+</nav>
+
+  </div>
+
+  <!-- Right: Profile photo -->
+  <img
+    src="/profile.webp"
+    alt="Portrait of Ye Yuan"
+    class="profile-photo"
+    width="132"
+    height="152"
+  />
+
+</header>
+
 
     <main>
       <section class="intro" aria-label="About me">
         <p>
-          I am an economics researcher whose interests lie in health economics,
-          family economics, and applied microeconomics. I carried out my doctoral
-          research at the University of Exeter.
+          I am an economics researcher whose interests lie in <strong>health economics, family economics, and applied microeconomics.</strong>  I am an Economics PhD Candidate at the <strong>University of Exeter</strong>.
         </p>
         <p>
-          I study healthcare systems, marriage matching, and gender norms, using
+          I am currently a <strong>Postdoc Research Fellow</strong> at Bayes Business School, City St George's, University of London, where I work in the <strong>Impact Evaluation of Virtual Wards Project</strong>.
+        </p>
+        <p>
+          My main research focuses on topics related to (i) healthcare systems, health care delivery and health policy; (ii) measurement and dynamics of norms; (iii) bidimensional marriage matching models and role of norms in marriage matching; and (iv) other broader topics in family economics and applied microeconomics including fertility decisions, human capital investment, and sex selection.
+          <!-- I study healthcare systems, marriage matching, and gender norms, using
           quasi-experimental methods and evidence from administrative records,
-          household surveys, and biomarkers.
+          household surveys, and biomarkers. -->
+        </p>
+        <p>
+          I am on the <strong>2026-2027</strong> job market.
         </p>
       </section>
 
@@ -50,20 +92,17 @@ const reviewPdfUrl = 'https://robinsoncortes.github.io/website_files/matching_re
             Evidence from England's Emergency Care System
           </p>
           <p class="paper-meta">
-            with <a href="https://www.damianclarke.net/" target="_blank" rel="noopener noreferrer">Damian Clarke</a>
+            with <a href={DCUrl} target="_blank" rel="noopener noreferrer">Damian Clarke</a>
           </p>
           <p class="paper-links">
             <a href={jmpUrl} target="_blank" rel="noopener noreferrer">PDF (earlier draft)</a>
           </p>
-          <p class="abstract">
-            We examine how congestion in one stage of a public service system
-            affects outcomes elsewhere. Using a £700 million hospital discharge
-            intervention in England in 2022–2023, the paper studies how improved
-            patient flow reduces ambulance handover delays and increases
-            ambulance availability. The findings suggest that easing hospital
-            bottlenecks can improve emergency response and survival among
-            out-of-hospital cardiac arrest patients.
-          </p>
+          <details class="abstract-details">
+            <summary>Abstract</summary>
+            <p class="abstract">
+              In multi-stage public service systems, congestion at one stage can propagate to others, but credible evidence on the magnitude of such spillovers is scarce. We study the emergency healthcare system in England, where hospital discharge delays create upstream congestion that traps ambulances at hospital doors and slows emergency response in the community. We exploit a £700 million discharge fund introduced during the winter of 2022–2023 that targeted hospital patient flow without directly intervening in ambulance services. Using regression discontinuity in time and difference-in-discontinuities design around the structural break in discharge rates, we find that the policy increased return of spontaneous circulation for cardiac arrest patients by 3.8 percentage points and 30-day survival by 2.4 percentage points. The mechanism operated through accelerated patient throughput which reduced ambulance handover delays and freed vehicles for emergency dispatch. With a back-of-the-envelope calculation, we show that the survival gains for cardiac arrest patients alone offset 11% of the programme's cost, given that the cardiac arrest patients represent just 0.6% of all hospital admissions. Our findings shed light on the importance of accounting for cross-stage spillovers when evaluating public service interventions, and suggest that targeted investments to relieve bottlenecks can yield large system-wide benefits in emergency care.
+            </p>
+          </details>
         </article>
 
         <h3>Publications</h3>
@@ -73,7 +112,7 @@ const reviewPdfUrl = 'https://robinsoncortes.github.io/website_files/matching_re
             Evolution, Diversity, and Gender
           </p>
           <p class="paper-meta">
-            with Climent Quintana-Domeque and Alejandro Robinson-Cortés
+            with <a href={COQUrl} target="_blank" rel="noopener noreferrer">Climent Quintana-Domeque</a> and <a href={ARCUrl} target="_blank" rel="noopener noreferrer">Alejandro Robinson-Cortés</a>
           </p>
           <p class="paper-meta">
             <em>Oxford Research Encyclopedia of Economics and Finance</em>, 2025
@@ -82,13 +121,10 @@ const reviewPdfUrl = 'https://robinsoncortes.github.io/website_files/matching_re
             <a href={reviewUrl} target="_blank" rel="noopener noreferrer">Publication</a>
             <span aria-hidden="true">·</span>
             <a href={reviewPdfUrl} target="_blank" rel="noopener noreferrer">PDF</a>
+            <span aria-hidden="true">·</span>
+            <a href={reviewrepoUrl} target="_blank" rel="noopener noreferrer">Replication</a>
           </p>
-          <p class="abstract">
-            We trace the evolution of matching research in economics using
-            bibliographic text data. The review documents growth in the field,
-            its intellectual diversity, and changes in collaboration patterns,
-            including persistent differences in gender representation.
-          </p>
+
         </article>
 
         <h3>Work in Progress</h3>
@@ -96,6 +132,12 @@ const reviewPdfUrl = 'https://robinsoncortes.github.io/website_files/matching_re
           <li>
             <span class="work-title">Stigma, Concealment, and Marriage Matching: Biomarker Evidence from Korea</span>
             <span class="work-link">— <a href={stigmaUrl} target="_blank" rel="noopener noreferrer">PDF</a></span>
+            <details class="abstract-details">
+            <summary>Abstract</summary>
+            <p class="abstract">
+              Social norms and stigma are central to many economic outcomes but rarely observed directly. This paper provides a behavioural measure of stigma in a setting where the underlying trait can be biologically verified. Using twelve waves of the Korea National Health and Nutrition Examination Survey (2008--2021), I compare self-reported smoking against biomarker-verified smoking measured by urinary cotinine concentration for 8,768 married couples and 7,940 single adults. I document a 34 percentage point gendered concealment gap where biomarker-positive women are far more likely than biomarker-positive men to self-report as nonsmokers, with married women showing an additional increment. Within the biomarker-positive sample of wives, concealment is systematically associated with husband education, surviving controls for the wife's own education and age. The choice of measurement affects empirical conclusions about marital sorting. The wife smoking--husband education relationship is 39 percent larger in magnitude under self-report than under biomarker measurement, and structural Choo-Siow surplus estimates differ systematically across measurement schemes. The gendered concealment gap has declined substantially over the study period.
+            </p>
+          </details>
           </li>
           <li>Labour Regulation and Sex Selection in China</li>
           <li>Education for Identity: Bidimensional Marriage Matching and Ethnic Preferences in China</li>
@@ -105,9 +147,9 @@ const reviewPdfUrl = 'https://robinsoncortes.github.io/website_files/matching_re
       <section class="section-block small-section" aria-labelledby="advisors-heading">
         <h2 id="advisors-heading">PhD Advisors</h2>
         <p>
-          Climent Quintana-Domeque,
-          <a href="https://www.damianclarke.net/" target="_blank" rel="noopener noreferrer">Damian Clarke</a>,
-          and <a href="https://www.robinson-cortes.com/" target="_blank" rel="noopener noreferrer">Alejandro Robinson-Cortés</a>.
+          <a href={COQUrl} target="_blank" rel="noopener noreferrer">Climent Quintana-Domeque</a>,
+          <a href={DCUrl} target="_blank" rel="noopener noreferrer">Damian Clarke</a>,
+          and <a href={ARCUrl} target="_blank" rel="noopener noreferrer">Alejandro Robinson-Cortés</a>.
         </p>
       </section>
     </main>
@@ -115,7 +157,7 @@ const reviewPdfUrl = 'https://robinsoncortes.github.io/website_files/matching_re
     <footer class="site-footer">
       <span>© {new Date().getFullYear()} Ye Yuan</span>
       <span aria-hidden="true">·</span>
-      <a href="mailto:yy429@exeter.ac.uk">yy429@exeter.ac.uk</a>
+      <a href="mailto:ye.yuan@citystgeorges.ac.uk">ye.yuan@citystgeorges.ac.uk</a>
     </footer>
   </div>
 </AcademicLayout>
