@@ -1,177 +1,121 @@
-<!-- ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+---
+import AcademicLayout from '../layouts/AcademicLayout.astro';
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+// Existing PDF links from the previous Google Sites website.
+// Replace these with files in /public/papers and /public/cv.pdf whenever ready.
+const cvUrl = 'https://cdn.jsdelivr.net/gh/YYuan4031357/CV@main/CV%20-%20Ye%20Yuan.pdf';
+const jmpUrl = 'https://cdn.jsdelivr.net/gh/YYuan4031357/JobMarketPaper/Job%20Market%20Paper%20-%20Ye%20Yuan.pdf';
+const stigmaUrl = 'https://cdn.jsdelivr.net/gh/YYuan4031357/StigmaProject/Yuan.%20Y%20%282026%29%20-%20Stigma%2C%20Concealment%2C%20and%20Marriage%20Matching.pdf';
+const reviewUrl = 'https://doi.org/10.1093/acrefore/9780190625979.013.986';
+const reviewPdfUrl = 'https://robinsoncortes.github.io/website_files/matching_review.pdf';
 ---
 
-<BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
-    </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
-    </div>
+<AcademicLayout>
+  <div class="academic-site">
+    <header class="profile-header" id="top">
+      <h1>Ye Yuan <span class="chinese-name" lang="zh-Hans">元野</span></h1>
+      <p class="role">Economics Researcher</p>
+      <nav class="profile-links" aria-label="Profile links">
+        <a href="mailto:yy429@exeter.ac.uk">Email</a>
+        <span aria-hidden="true">·</span>
+        <a href={cvUrl} target="_blank" rel="noopener noreferrer">CV</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/YYuan4031357" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://bsky.app/profile/ye-yuan.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-label="About me">
+        <p>
+          I am an economics researcher whose interests lie in health economics,
+          family economics, and applied microeconomics. I carried out my doctoral
+          research at the University of Exeter.
+        </p>
+        <p>
+          I study healthcare systems, marriage matching, and gender norms, using
+          quasi-experimental methods and evidence from administrative records,
+          household surveys, and biomarkers.
+        </p>
+      </section>
+
+      <section id="research" class="section-block" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research</h2>
+
+        <h3>Job Market Paper</h3>
+        <article class="paper">
+          <p class="paper-title">
+            Congestion Spillovers in Multi-Stage Public Services:
+            Evidence from England's Emergency Care System
+          </p>
+          <p class="paper-meta">
+            with <a href="https://www.damianclarke.net/" target="_blank" rel="noopener noreferrer">Damian Clarke</a>
+          </p>
+          <p class="paper-links">
+            <a href={jmpUrl} target="_blank" rel="noopener noreferrer">PDF (earlier draft)</a>
+          </p>
+          <p class="abstract">
+            We examine how congestion in one stage of a public service system
+            affects outcomes elsewhere. Using a £700 million hospital discharge
+            intervention in England in 2022–2023, the paper studies how improved
+            patient flow reduces ambulance handover delays and increases
+            ambulance availability. The findings suggest that easing hospital
+            bottlenecks can improve emergency response and survival among
+            out-of-hospital cardiac arrest patients.
+          </p>
+        </article>
+
+        <h3>Publications</h3>
+        <article class="paper">
+          <p class="paper-title">
+            A Quantitative Review of Matching Papers in Economics:
+            Evolution, Diversity, and Gender
+          </p>
+          <p class="paper-meta">
+            with Climent Quintana-Domeque and Alejandro Robinson-Cortés
+          </p>
+          <p class="paper-meta">
+            <em>Oxford Research Encyclopedia of Economics and Finance</em>, 2025
+          </p>
+          <p class="paper-links">
+            <a href={reviewUrl} target="_blank" rel="noopener noreferrer">Publication</a>
+            <span aria-hidden="true">·</span>
+            <a href={reviewPdfUrl} target="_blank" rel="noopener noreferrer">PDF</a>
+          </p>
+          <p class="abstract">
+            We trace the evolution of matching research in economics using
+            bibliographic text data. The review documents growth in the field,
+            its intellectual diversity, and changes in collaboration patterns,
+            including persistent differences in gender representation.
+          </p>
+        </article>
+
+        <h3>Work in Progress</h3>
+        <ul class="work-list">
+          <li>
+            <span class="work-title">Stigma, Concealment, and Marriage Matching: Biomarker Evidence from Korea</span>
+            <span class="work-link">— <a href={stigmaUrl} target="_blank" rel="noopener noreferrer">PDF</a></span>
+          </li>
+          <li>Labour Regulation and Sex Selection in China</li>
+          <li>Education for Identity: Bidimensional Marriage Matching and Ethnic Preferences in China</li>
+        </ul>
+      </section>
+
+      <section class="section-block small-section" aria-labelledby="advisors-heading">
+        <h2 id="advisors-heading">PhD Advisors</h2>
+        <p>
+          Climent Quintana-Domeque,
+          <a href="https://www.damianclarke.net/" target="_blank" rel="noopener noreferrer">Damian Clarke</a>,
+          and <a href="https://www.robinson-cortes.com/" target="_blank" rel="noopener noreferrer">Alejandro Robinson-Cortés</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© {new Date().getFullYear()} Ye Yuan</span>
+      <span aria-hidden="true">·</span>
+      <a href="mailto:yy429@exeter.ac.uk">yy429@exeter.ac.uk</a>
+    </footer>
   </div>
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
-
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
-</BaseLayout> -->
-
----
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
----
-
-<BaseLayout
-  title={SITE_TITLE}
-  description={SITE_DESCRIPTION}
-  sideBarActiveItemID="home"
->
-  <main class="max-w-3xl space-y-12">
-
-    <!-- Introduction -->
-    <section class="space-y-5">
-      <p class="text-sm font-semibold tracking-widest uppercase text-primary">
-        Economics Researcher
-      </p>
-
-      <h1 class="text-4xl md:text-5xl font-bold text-base-content">
-        Ye Yuan <span class="text-2xl font-normal opacity-60">元野</span>
-      </h1>
-
-      <p class="text-lg leading-relaxed">
-        Welcome to my website! I am an economics researcher
-        working in health economics, family economics, and
-        applied microeconomics.
-      </p>
-
-      <p class="leading-relaxed text-base-content/80">
-        My research focuses on healthcare systems, marriage
-        matching, and gender norms. I use empirical methods
-        and data from administrative records, household surveys,
-        and biomarkers to study economic behaviour and
-        policy outcomes.
-      </p>
-
-      <div class="flex flex-wrap gap-3 pt-2">
-        <a href="/research" class="btn btn-primary">
-          My Research
-        </a>
-        <a href="mailto:ye.yuan@citystgeorges.ac.uk" class="btn btn-outline">
-          Contact Me
-        </a>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Research Interests -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold">Research Interests</h2>
-
-      <div class="flex flex-wrap gap-2">
-        <span class="badge badge-outline p-4">Applied Microeconomics</span>
-        <span class="badge badge-outline p-4">Health Economics</span>
-        <span class="badge badge-outline p-4">Family Economics</span>
-        <span class="badge badge-outline p-4">Gender Economics</span>
-      </div>
-    </section>
-
-    <!-- Selected Research -->
-    <section class="space-y-6">
-      <div class="flex items-center justify-between gap-4">
-        <h2 class="text-2xl font-bold">Selected Research</h2>
-        <a href="/research" class="link link-primary text-sm">
-          View all →
-        </a>
-      </div>
-
-      <div class="border-l-4 border-primary pl-5 space-y-2">
-        <p class="text-xs font-semibold uppercase tracking-wider text-primary">
-          Job Market Paper
-        </p>
-        <h3 class="text-lg font-semibold">
-          Congestion Spillovers in Multi-Stage Public Services:
-          Evidence from England's Emergency Care System
-        </h3>
-        <p class="text-sm text-base-content/70">
-          With Damian Clarke
-        </p>
-      </div>
-
-      <div class="border-l-4 border-base-300 pl-5 space-y-2">
-        <p class="text-xs font-semibold uppercase tracking-wider opacity-60">
-          Publication · 2025
-        </p>
-        <h3 class="text-lg font-semibold">
-          A Quantitative Review of Matching Papers in Economics:
-          Evolution, Diversity, and Gender
-        </h3>
-        <p class="text-sm italic text-base-content/70">
-          Oxford Research Encyclopedia of Economics and Finance
-        </p>
-      </div>
-    </section>
-
-  </main>
-</BaseLayout>
+</AcademicLayout>
